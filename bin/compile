@@ -31,6 +31,7 @@ for formula in $(cat "$BUILD_DIR/.cellar")
 do
   echo "-----> Installing $formula using brew"
   brew install $formula | indent
+  brew cleanup -s
   if [ $? -ne 0 ]; then
     rm "$HOME/$VENDOR_DIR/linuxbrew"
     exit 1
@@ -39,5 +40,3 @@ done
 
 # save '.linuxbrew'
 (cd $HOME && tar cf - .linuxbrew) | (cd $BUILD_DIR && tar xf -)
-
-brew cleanup -s
