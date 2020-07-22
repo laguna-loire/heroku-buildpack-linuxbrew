@@ -8,7 +8,7 @@ echo "-----> Installing linuxbrew"
 BUILD_DIR=$1
 VENDOR_DIR="vendor"
 
-git clone "https://github.com/Linuxbrew/brew.git" -b "1.9.4" \
+git clone "https://github.com/Linuxbrew/brew.git" \
   "$HOME/.linuxbrew" 2>&1 | indent
 if [ $? -ne 0 ]; then
   exit 1
@@ -21,6 +21,7 @@ export PATH="\$HOME/.linuxbrew/bin:\$PATH"
 export MANPATH="\$HOME/.linuxbrew/share/man:\$MANPATH"
 export INFOPATH="\$HOME/.linuxbrew/share/info:\$INFOPATH"
 export LD_LIBRARY_PATH="\$HOME/.linuxbrew/lib:\$LD_LIBRARY_PATH"
+export HOMEBREW_NO_AUTO_UPDATE=1
 _EOT_
 
 . $PROFILE_PATH
