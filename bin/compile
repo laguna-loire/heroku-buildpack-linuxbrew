@@ -40,4 +40,4 @@ done
 # save '.linuxbrew'
 (cd $HOME && tar cf - .linuxbrew) | (cd $BUILD_DIR && tar xf -)
 
-brew cleanupu -s
+brew cleanup -s
