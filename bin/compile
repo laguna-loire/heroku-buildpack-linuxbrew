@@ -39,7 +39,7 @@ do
 done
 
 rm -rf $(brew --cache)
-brew cask cleanup
+brew cask zap
 
 # save '.linuxbrew'
 (cd $HOME && tar cf - .linuxbrew) | (cd $BUILD_DIR && tar xf -)
