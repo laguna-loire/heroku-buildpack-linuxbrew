@@ -28,6 +28,7 @@ _EOT_
 cat $PROFILE_PATH | indent
 
 # install
+brew upgrade
 for formula in $(cat "$BUILD_DIR/.cellar")
 do
   echo "-----> Installing $formula using brew"
